@@ -8,7 +8,7 @@ namespace GraphTraverser3 {
     class Program {
         
         static void Main(string[] args) {
-            Graph g = new Graph(3);       
+            Graph g = new Graph(5);       
             g.Display();
         }
     }

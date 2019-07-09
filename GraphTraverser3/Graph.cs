@@ -13,7 +13,7 @@ namespace GraphTraverser3 {
 
         public Graph(int s) {
             size = s;
-            node = new Node(2);
+            node = new Node(s);
             
         }
         public void Display() {            
