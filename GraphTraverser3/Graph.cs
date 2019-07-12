@@ -7,17 +7,25 @@ using System.Threading.Tasks;
 namespace GraphTraverser3 {
     class Graph {
 
-        public int size;
-        public Node node;
-
+        private int size;
+        private int[,] board;
 
         public Graph(int s) {
-            size = s;
-            node = new Node(s);
-            
+            size = s;            
+            board = new int[,] { 
+                { 2, 2, 2, 1 }, 
+                { 2, 1, 1, 1 }, 
+                { 1, 2, 2, 1 },                 
+                { 2, 1, 1, 2 } };            
+
         }
-        public void Display() {            
-                Console.WriteLine(node.val);            
+        public void Display() {
+            for (int i = 0; i < size; i++) {
+                for (int j = 0; j < size; j++) {
+                    Console.Write(board[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
