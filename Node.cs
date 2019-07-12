@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace GraphTraverser3 {
     class Node {
-        public int val;
+        private int val;
+        
         public Node(int v) {
             val = v;            
         }        
