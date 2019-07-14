@@ -9,8 +9,6 @@ namespace GraphTraverser3 {
         static void Main(string[] args) {
             Graph g = new Graph(4);
             g.Display();
-            Console.WriteLine("Testing GH Push From Visual Studio 2");
-            Console.Read();
         }
     }
 }
