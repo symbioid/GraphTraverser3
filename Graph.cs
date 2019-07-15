@@ -37,7 +37,6 @@ namespace GraphTraverser3 {
                     Console.Write(Board[i, j].Value + " ");
                 }
                 Console.WriteLine();
-
             }
         }
 
