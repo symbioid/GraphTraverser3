@@ -10,7 +10,7 @@ namespace GraphTraverser3 {
             Graph g = new Graph(4);
             g.Display();
             g.LinkNodes();
-
+            g.DisplayEachNodesConnections();
         }
     }
 }
