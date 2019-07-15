@@ -6,21 +6,19 @@ using System.Threading.Tasks;
 
 namespace GraphTraverser3 {
     class Node {
-        public int Value { get; set; }
-        private int numEdges = 4;
+        
+        static private int numEdges = 4;
+        private Node[] targetNodes = new Node[4];
         public int NumEdges { get => numEdges; set => numEdges = value; }
+        public Node[] TargetNodes  { get => targetNodes; set => targetNodes = value; }
+        public int Value { get; set; }
 
-        private int Visited;
-        
-        private Node[] TargetNodes;
 
-        
-        public Node(int v) {           
+        public Node(int v) {                   
             Value = v;                        
         }   
         
-        public void AddTargetNode(int idx, Node tnode) {
-            
+        public void AddTargetNode(int idx, ref Node tnode) {            
             TargetNodes[idx] = tnode;            
         }
     }
