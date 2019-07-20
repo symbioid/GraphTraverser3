@@ -15,7 +15,11 @@ namespace GraphTraverser3 {
         private Node[] targetNodes = new Node[4];
         public Node[] TargetNodes  { get => targetNodes; set => targetNodes = value; }
 
+        private bool isActive = true;
+        public bool IsActive { get => isActivate; set => isActive = value; }
         public int Value { get; set; }
+        
+        
 
         public Node(Tuple<int,int> l, int v) {
             Location = l;
