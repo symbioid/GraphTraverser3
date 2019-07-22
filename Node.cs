@@ -18,8 +18,7 @@ namespace GraphTraverser3 {
         
         public bool IsActive { get; set; }
         public int Value { get; set; }
-        
-        
+        //public Type Dirs { get => dirs; set => dirs = value; }
 
         public Node(Tuple<int,int> l, int v) {
             Location = l;
@@ -35,24 +34,10 @@ namespace GraphTraverser3 {
         }
 
         public void DisplayTargetNodes() {
-
-            String Direction = "";
+            String[] Direction = { "Up", "Right", "Down", "Left" };
 
             for (int i = 0; i < NumEdges; i++) {
-                if (i == 0) {
-                    Direction = "Up";
-                } 
-                if (i == 1) {
-                    Direction = "Right";
-                }
-                if (i == 2) {
-                    Direction = "Down";
-                }
-                if (i == 3) {
-                    Direction = "Left";
-                }           
-
-                Console.Write($"Node {Location}'s {Direction} Node is: ");
+                Console.Write($"Node {Location}'s {Direction[i]} Node is: ");
                 if (TargetNodes[i] == null) {                    
                     Console.WriteLine("A NULL NODE");
                     

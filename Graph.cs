@@ -34,7 +34,6 @@ namespace GraphTraverser3 {
         public void Display() {
             for (int i = 0; i < Size; i++) {
                 for (int j = 0; j < Size; j++) {
-                    //Console.Write(Board[i, j].Value + " ");
                     Board[i, j].Display();
                     if (j < Size-1) {
                         Console.Write(" ");
