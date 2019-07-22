@@ -9,7 +9,7 @@ namespace GraphTraverser3 {
 
         private int Size;
         private int[,] MoveValArray;
-        private Node[,] Board;
+        private Node[,] Board { get; }
 
         public Graph(int s) {
             Size = s;      
@@ -20,9 +20,7 @@ namespace GraphTraverser3 {
                 { 1, 2, 2, 1 },                 
                 { 2, 1, 1, 2 }
             };
-
-            Board = new Node[Size, Size];  
-            
+            Board = new Node[Size, Size];           
             for (int i = 0; i < Size; i++) {
                 for (int j = 0; j < Size; j++) {
                     var Loc = Tuple.Create(i, j);
@@ -61,8 +59,8 @@ namespace GraphTraverser3 {
                             if (i - movevalue < 0) {
                                 Board[i, j].TargetNodes[idx] = null;
                             }
-                            else { 
-                                Board[i, j].AddTargetNode(idx, Board[i - movevalue, j]);
+                            else { //Derive these params from return of MoveVector function;
+                                Board[i, j].AddTargetNode(idx, Board[i - movevalue, j]);  
                             }
                         }
 
@@ -70,7 +68,7 @@ namespace GraphTraverser3 {
                             if (j + movevalue >= Size) {
                                 Board[i, j].TargetNodes[idx] = null;
                             }
-                            else {
+                            else { //Derive these params from return of MoveVector function;
                                 Board[i, j].AddTargetNode(idx, Board[i, j + movevalue]);
                             }
                         }
@@ -79,7 +77,7 @@ namespace GraphTraverser3 {
                             if (i + movevalue >= Size) {
                                 Board[i, j].TargetNodes[idx] = null;
                                 
-                            } else {
+                            } else { //Derive these params from return of MoveVector function;
                                 Board[i, j].AddTargetNode(idx, Board[i + movevalue, j]);
                             }
                         }

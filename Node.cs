@@ -18,7 +18,6 @@ namespace GraphTraverser3 {
         
         public bool IsActive { get; set; }
         public int Value { get; set; }
-        //public Type Dirs { get => dirs; set => dirs = value; }
 
         public Node(Tuple<int,int> l, int v) {
             Location = l;
