@@ -21,6 +21,10 @@ namespace GraphTraverser3 {
             Location = l;
             Value = v;                        
         }   
+
+        public void Display() {
+            Console.Write(Value);
+        }
         
         public void AddTargetNode(int idx, Node tnode) {            
             TargetNodes[idx] = tnode;            
