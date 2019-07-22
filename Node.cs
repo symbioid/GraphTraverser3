@@ -8,15 +8,15 @@ namespace GraphTraverser3 {
     class Node {
 
         public Tuple<int, int> Location { get; set; }
-        
-        static private int numEdges = 4;        
-        public int NumEdges { get => numEdges; set => numEdges = value; }
 
-        private Node[] targetNodes = new Node[4];
+        static private int numEdges = 4;
+        public int NumEdges { get; } = numEdges;
+
+        private Node[] targetNodes = new Node[numEdges];
         public Node[] TargetNodes  { get => targetNodes; set => targetNodes = value; }
 
-        private bool isActive = true;
-        public bool IsActive { get => isActivate; set => isActive = value; }
+        
+        public bool IsActive { get; set; }
         public int Value { get; set; }
         
         
