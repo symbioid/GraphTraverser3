@@ -6,32 +6,38 @@ using System.Threading.Tasks;
 
 namespace GraphTraverser3 {
     class Walker {
-        public Node StartNode;
         public Node CurrentNode;
-        public Graph graph;
         public List<Node> MoveList = new List<Node>();
-
+        public int TotalPathCount = 0;
         public int MoveCount { get => MoveCount; set => MoveCount = 0; }
         
-        public Walker(Tuple<int, int> StartPosition, Node n) {
-            StartNode = n;            
-            LogPosition(StartNode);
+        public Walker(Node n) {
+            CurrentNode = n;                 
+            LogPosition(CurrentNode);
         }
 
         public void Move(Node TargetNode) {
-            if (TargetNode.IsActive == true) {
+            if (TargetNode.IsActive) {
                 CurrentNode.IsActive = false;
                 CurrentNode = TargetNode;
-                MoveCount++;
+                LogPosition(CurrentNode);
             }
             else {
-                Console.WriteLine("EOL");
+                TotalPathCount += 1;
+                Console.WriteLine($"Path # {TotalPathCount}:");
+                Console.WriteLine($"Total Moves in Path: {MoveCount}");
+
+                for (int i = 0; i < MoveCount; i++) {
+                    Console.WriteLine($"{MoveCount}: {MoveList[i].Location}");
+                }
                 return;
             }
         }
 
         public void LogPosition(Node n) {
             MoveList.Add(n);
+            MoveCount++;
         }
+        
     }
 }

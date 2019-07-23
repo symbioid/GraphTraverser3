@@ -19,9 +19,9 @@ namespace GraphTraverser3 {
         public bool IsActive { get; set; }
         public int Value { get; set; }
 
-        public Node(Tuple<int,int> l, int v) {
-            Location = l;
-            Value = v;                        
+        public Node(Tuple<int,int> location, int value) {
+            Location = location;
+            Value = value;                        
         }   
 
         public void Display() {
@@ -41,8 +41,7 @@ namespace GraphTraverser3 {
                     Console.WriteLine("A NULL NODE");
                     
                 } else {
-                    Console.WriteLine($"at {TargetNodes[i].Location}, with a value of {TargetNodes[i].Value}");
-                    
+                    Console.WriteLine($"at {TargetNodes[i].Location}, with a value of {TargetNodes[i].Value}");                    
                 }                
             }
             Console.WriteLine("------------------");
