@@ -1,5 +1,8 @@
 ﻿using System;
-
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace GraphTraverser3 {
     class Node {
@@ -8,16 +11,30 @@ namespace GraphTraverser3 {
 
         static private int numEdges = 4;
         public int NumEdges { get; } = numEdges;
-        public bool Visited { get; set; }
-        public int Value { get; set; }
 
         private Node[] targetNodes = new Node[numEdges];
-        public Node[] TargetNodes  { get => targetNodes; set => targetNodes = value; }        
-        
+<<<<<<< HEAD
+        private bool visited;
 
+        public Node[] TargetNodes  { get => targetNodes; set => targetNodes = value; }        
+        public bool Visited { get => visited; set => visited = false; }
+
+        public int Value { get; set; }
+        
         public Node(Tuple<int,int> location, int value) {
             Location = location;
             Value = value;                        
+=======
+        public Node[] TargetNodes  { get => targetNodes; set => targetNodes = value; }
+
+        
+        public bool IsActive { get; set; }
+        public int Value { get; set; }
+
+        public Node(Tuple<int,int> l, int v) {
+            Location = l;
+            Value = v;                        
+>>>>>>> parent of abdd838... More Walker Class / Refactor / Add More Output upon reaching path end. (Still not called/tested)
         }   
 
         public void Display() {
@@ -37,7 +54,8 @@ namespace GraphTraverser3 {
                     Console.WriteLine("A NULL NODE");
                     
                 } else {
-                    Console.WriteLine($"at {TargetNodes[i].Location}, with a value of {TargetNodes[i].Value}");                    
+                    Console.WriteLine($"at {TargetNodes[i].Location}, with a value of {TargetNodes[i].Value}");
+                    
                 }                
             }
             Console.WriteLine("------------------");
