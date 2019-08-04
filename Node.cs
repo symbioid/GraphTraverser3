@@ -13,18 +13,6 @@ namespace GraphTraverser3 {
         public int NumEdges { get; } = numEdges;
 
         private Node[] targetNodes = new Node[numEdges];
-<<<<<<< HEAD
-        private bool visited;
-
-        public Node[] TargetNodes  { get => targetNodes; set => targetNodes = value; }        
-        public bool Visited { get => visited; set => visited = false; }
-
-        public int Value { get; set; }
-        
-        public Node(Tuple<int,int> location, int value) {
-            Location = location;
-            Value = value;                        
-=======
         public Node[] TargetNodes  { get => targetNodes; set => targetNodes = value; }
 
         
@@ -34,7 +22,6 @@ namespace GraphTraverser3 {
         public Node(Tuple<int,int> l, int v) {
             Location = l;
             Value = v;                        
->>>>>>> parent of abdd838... More Walker Class / Refactor / Add More Output upon reaching path end. (Still not called/tested)
         }   
 
         public void Display() {
