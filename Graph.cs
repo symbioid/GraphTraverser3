@@ -20,6 +20,7 @@ namespace GraphTraverser3 {
                 { 1, 2, 2, 1 },                 
                 { 2, 1, 1, 2 }
             };
+
             Board = new Node[Size, Size];           
             for (int i = 0; i < Size; i++) {
                 for (int j = 0; j < Size; j++) {
